@@ -65,10 +65,11 @@ export const theme: ThemeUserConfig = {
       // Registration link
       {
         title: 'Moe ICP ',
-        link: 'https://icp.gov.moe/?keyword=114514',
+        link: 'https://icp.gov.moe/?keyword=20260117',
         style: 'text-sm' // Uno/TW CSS class
       },
       // Privacy Policy link
+      
       {
         title: 'Site Policy',
         link: '/terms/list',
