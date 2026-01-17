@@ -31,7 +31,7 @@ export default defineConfig({
   // base: '/astro-pure/',
   trailingSlash: 'never',
   // root: './my-project-directory',
-  server: { host: true },
+  server: { host: true, allowedHosts: ['www.yuanji666.fun'] },
 
   // [Adapter]
   // https://docs.astro.build/en/guides/deploy/

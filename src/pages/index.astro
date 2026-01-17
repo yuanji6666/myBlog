@@ -10,11 +10,12 @@ import ProjectCard from '@/components/home/ProjectCard.astro'
 import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
 import config from '@/site-config'
+import { Spoiler } from 'packages/pure/components/user'
 
-const languages = ['Html', 'JavaScript', 'CSS', 'Shell']
-const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
-const backend = ['Vercel', 'Waline']
-
+const languages = ['Go', 'C', 'C++', 'Python']
+const agentdev = ['Eino']
+const backend = ['Gin', 'Gorm','Mysql','Redis','RabbitMQ']
+const developmentTools = ['Docker','Vim','Git','Markdown']
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
@@ -43,46 +44,69 @@ if (!images[imagePath])
       <div class='flex flex-col items-center gap-y-4'>
         <h1 class='text-3xl font-medium'>{config.author}</h1>
         <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-          <Label title='Somewhere'>
+          <Label title='Wuhan China'>
             <Icon name='location' class='size-5' slot='icon' />
           </Label>
-          <Label
-            title='Source code'
-            as='a'
-            href='https://github.com/cworld1/astro-theme-pure'
-            target='_blank'
-          >
+         
+          <Label title='yuanji597@gamil.com' >
+            <Icon name= 'email' class='size-5' slot='icon' />
+          </Label>
+
+           <Label title='GitHub' as='a' href='https://github.com/yuanji6666' target='_blank'>
             <Icon name='github' class='size-5' slot='icon' />
           </Label>
+
         </div>
       </div>
-
-      {/* Get template */}
-      <a
-        href='https://github.com/cworld1/astro-theme-pure'
-        target='_blank'
-        class='flex flex-row items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
-      >
-        <span class='relative flex items-center justify-center'>
-          <span
-            class='absolute size-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-          ></span>
-          <span class='size-2 rounded-full bg-green-400'></span>
-        </span>
-        <p class='font-medium text-muted-foreground'>Get Template</p>
-      </a>
     </section>
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
-        <p class='text-muted-foreground'>Developer / Designer</p>
-        <p class='text-muted-foreground'>
-          Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione
-          indoctum dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel,
-          at eum oratio possit voluptatum.
-        </p>
+        <p class='text-muted-foreground'>Student / <del>Developer</del></p>
+        <p>你好，我叫袁霁 👋🏻 <Spoiler>原神牛逼</Spoiler></p>
+        <p>目前在华中科技大学计算机科学与技术学院读大二 📖</p>
+        <p>一名萌新Gopher,努力学习Golang后端开发和Agent开发技术栈中 🧑🏻‍💻</p>
+        <p>梦想成为编程高手！✨</p>
+        <div class='mt-1 flex gap-x-2'>
+      <img 
+           alt="CodeTime Badge" 
+           src="https://shields.jannchie.com/endpoint?style=flat-square&color=222&url=https%3A%2F%2Fapi.codetime.dev%2Fv3%2Fusers%2Fshield%3Fuid%3D35283"
+           class='rounded-md border'
+      />
+<img 
+           alt="CodeTime Badge" 
+           src="https://shields.jannchie.com/endpoint?style=flat-square&color=222&url=https%3A%2F%2Fapi.codetime.dev%2Fv3%2Fusers%2Fshield%3Fuid%3D35283%26language%3Dgo"
+           class='rounded-md border'
+      />
+
+      </div>
+        
+        
         <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
       </Section>
+      
+      
+       <Section title='Education'>
+        <Card
+          as='a'
+          heading='华中科技大学'
+          subheading='计算机科学与技术学院 Computer Science'
+          date='August 2024 - Present'
+          href='cs.hust.edu.cn'
+        >
+          <img
+            class='absolute end-0 z-0 m-0 -my-3 h-full w-1/2 object-cover opacity-40'
+            src='/images/hust.png'
+          />
+        </Card>
+      </Section>
+      <Section title='Skills'>
+        <SkillLayout title='Languages' skills={languages} />
+        <SkillLayout title='Backend' skills={backend} />
+        <SkillLayout title='Tools' skills={developmentTools} />
+        <SkillLayout title='AI' skills={agentdev} />
+      </Section>
+      
       {
         allPostsByDate.length > 0 && (
           <Section title='Posts'>
@@ -127,27 +151,9 @@ if (!images[imagePath])
       />
     </Section> */
       }
-      <Section title='Education'>
-        <Card
-          as='a'
-          heading='Lorem ipsum'
-          subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei.'
-          date='August 2021 - July 2025'
-          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        >
-          {
-            /* <ul class='ms-4 list-disc text-muted-foreground'>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-            molestiae laboriosam pariatur!
-          </li>
-          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-        </ul> */
-          }
-        </Card>
-      </Section>
-
-      <Section title='Website List'>
+     
+{
+      /* <Section title='Website List'>
         <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
           <ProjectCard
             href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
@@ -174,8 +180,9 @@ if (!images[imagePath])
             imagePath='/src/assets/projects/4.avif'
           />
         </div>
-      </Section>
-
+      </Section>*/
+}
+{/* 
       <Section title='Certifications'>
         <Card
           as='a'
@@ -185,13 +192,8 @@ if (!images[imagePath])
           href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
         />
       </Section>
-
-      <Section title='Skills'>
-        <SkillLayout title='Languages' skills={languages} />
-        <SkillLayout title='Frontend' skills={frontend} />
-        <SkillLayout title='Backend' skills={backend} />
-      </Section>
+*/}
+      
     </div>
-    <Quote class='mt-12' />
   </main>
 </PageLayout>

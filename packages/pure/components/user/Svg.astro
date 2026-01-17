@@ -30,12 +30,19 @@ if ('alt' in attributeOverrides) {
   throw new Error(ALT_NOT_ALLOWED)
 }
 
-if (!svgSource.trimStart().toLowerCase().startsWith('<svg')) {
+// 跳过可能的XML声明
+let processedSvgSource = svgSource.trimStart()
+const xmlDeclRegex = /^<\?xml[^>]*\?>/i
+if (xmlDeclRegex.test(processedSvgSource)) {
+  processedSvgSource = processedSvgSource.replace(xmlDeclRegex, '').trimStart()
+}
+
+if (!processedSvgSource.toLowerCase().startsWith('<svg')) {
   throw new Error(`${SVG_NOT_FOUND}, provided: ${svgSource.slice(0, 23)}
   maybe you need to add '?raw' to the end of the import?`)
 }
 
-const contents = overrideSvgAttributes(svgSource, attributeOverrides)
+const contents = overrideSvgAttributes(processedSvgSource, attributeOverrides)
 ---
 
 <Fragment set:html={contents} />

@@ -6,10 +6,9 @@ import type { CollectionEntry } from 'astro:content'
 import 'katex/dist/katex.min.css'
 
 import { MediumZoom } from 'astro-pure/advanced'
-import { ArticleBottom, Copyright, Hero, TOC } from 'astro-pure/components/pages'
+import { ArticleBottom, Hero, TOC } from 'astro-pure/components/pages'
 import config from 'virtual:config'
 import PageLayout from '@/layouts/ContentLayout.astro'
-import { Comment, PageInfo } from '@/components/waline'
 
 interface Props {
   post: CollectionEntry<'blog'>
@@ -31,8 +30,7 @@ const {
   publishDate,
   title,
   updatedDate,
-  draft: isDraft,
-  comment: enableComment
+  draft: isDraft
 } = data
 
 const socialImage = heroImage
@@ -51,21 +49,13 @@ const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--un-tex
 >
   {!!headings.length && <TOC {headings} slot='sidebar' />}
 
-  <Hero {data} {remarkPluginFrontmatter} slot='header'>
-    <Fragment slot='description'>
-      {!isDraft && enableComment && <PageInfo comment class='mt-1' />}
-    </Fragment>
-  </Hero>
+  <Hero {data} {remarkPluginFrontmatter} slot='header' />
 
   <slot />
 
   <Fragment slot='bottom'>
-    {/* Copyright */}
-    <Copyright {data} />
     {/* Article recommend */}
     <ArticleBottom collections={posts} {id} class='mt-3 sm:mt-6' />
-    { /* Comment */
-    !isDraft && enableComment && <Comment class='mt-3 sm:mt-6' />}
   </Fragment>
 
   <slot name='bottom-sidebar' slot='bottom-sidebar' />
