@@ -2,6 +2,7 @@
 title: LeetCode Hot 100 刷题笔记 2（图论—技巧）
 publishDate: 2025-12-27 08:00:00
 description: 实践费曼学习法，记录解题思路，完善中......
+heroImage: { src: 'image.png', color: '#B4C6DA' }
 tags:
   - algorithm
   - leetcode
