@@ -6,7 +6,7 @@ tags:
   - Go
   - 基础语法
 language: 中文
-heroImage: '{"src":"./image.png","color":"#B4C6DA"}'
+heroImage: {"src":"./image.png","color":"#B4C6DA"}
 ---
 # Defer
 
