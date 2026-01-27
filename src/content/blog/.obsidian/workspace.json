@@ -11,10 +11,14 @@
             "id": "2bff4e2b056f9add",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "markdown-zh/index.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "index"
             }
           }
         ]
@@ -178,7 +182,13 @@
   },
   "active": "2bff4e2b056f9add",
   "lastOpenFiles": [
-    "未命名.base",
-    "leetcode1/LeetCode Hot 100 刷题笔记1 （哈希—二叉树).md"
+    "markdown-zh/thumbnail.jpg",
+    "leetcode2/LeetCode Hot 100 刷题笔记 2（图论—技巧）.md",
+    "markdown-zh/index.md",
+    "singleMode/GO设计模式-单例模式.md",
+    "leetcode1/image.png",
+    "leetcode1/LeetCode Hot 100 刷题笔记1 （哈希—二叉树).md",
+    "leetcode2/image.png",
+    "未命名.base"
   ]
 }
