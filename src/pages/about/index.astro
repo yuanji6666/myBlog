@@ -53,12 +53,6 @@ const headings = [
         href: 'https://www.obsidian.md/',
         icon: import('@/assets/tools/obsidian.svg?raw')
       },
-      {
-        name: 'ChatGPT',
-        description: 'AI Assistant',
-        href: 'https://www.chatgpt.com/',
-        icon: import('@/assets/tools/chatgpt.svg?raw')
-      },
     ]}
   />
   <ToolSection
@@ -84,10 +78,22 @@ const headings = [
         icon: import('@/assets/tools/goland.svg?raw')
       },
       {
+        name: 'Pycharm',
+        description: 'IDE',
+        href: 'https://www.jetbrains.com/pycharm/',
+        icon: import('@/assets/tools/pycharm.svg?raw')
+      },
+      {
         name: 'GitHub Copilot',
-        description: 'Vibe Coding',
+        description: 'AI Coding Assistant',
         href: 'https://www.github.com',
         icon: import('@/assets/tools/githubcopilot.svg?raw')
+      },
+      {
+        name: 'Claude Code',
+        description: 'AI Coding Assistant',
+        href: 'https://claude.ai/code',
+        icon: import('@/assets/tools/claude.svg?raw')
       }
     ]}
   />
@@ -102,7 +108,7 @@ const headings = [
         icon: import('@/assets/tools/apple.svg?raw')
       },
       {
-        name: 'Windows 10',
+        name: 'Windows 11',
         description: 'Desktop',
         href: 'https://news.microsoft.com/windows11-general-availability/',
         icon: import('@/assets/tools/windows11.svg?raw')
@@ -143,34 +149,11 @@ const headings = [
         icon: 'netease',
         color: '#50769d',
         link: 'https://music.163.com/#/user/home?id=1895096332',
-        text: 'follows',
+        text: 'followers',
         api: 'neteasemusic/1895096332'
       }
     ]}
   />
 
-  
 
-  {/* about-blog */}
-  <h2 id='about-blog'>About Blog</h2>
-  <p>Website history:</p>
-  <Timeline
-    events={[
-      {
-        date: '2026-01-16',
-        content:
-          'Build website using <a href="https://astro.build/" target="_blank">Astro</a> and <a href="https://github.com/srleom/astro-theme-resume" target="_blank">Astro Theme Resume</a>'
-      },
-      {
-        date: '2026-01-17',
-        content:
-          'Began writing website docs'
-      },
-      {
-        date: '2026-01-17',
-        content: 'Website Deployment'
-      }
-    ]}
-  />
-  
 </PageLayout>

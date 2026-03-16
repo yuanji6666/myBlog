@@ -12,10 +12,12 @@ import SkillLayout from '@/components/home/SkillLayout.astro'
 import config from '@/site-config'
 import { Spoiler } from 'packages/pure/components/user'
 
-const languages = ['Go', 'C', 'C++', 'Python']
-const agentdev = ['Eino']
-const backend = ['Gin', 'Gorm','Mysql','Redis','RabbitMQ']
-const developmentTools = ['Docker','Vim','Git','Markdown']
+const languages = ['Python', 'Go', 'C', 'C++']
+const frameworks = ['Gin', 'Flask', 'FastAPI']
+const databases = ['MySQL', 'Redis', 'Qdrant']
+const messageQueues = ['RabbitMQ']
+const developmentTools = ['Docker', 'Vim', 'Git', 'Markdown']
+const ai = ['LangGraph', 'Eino']
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
@@ -62,7 +64,7 @@ if (!images[imagePath])
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
-        <p class='text-muted-foreground'>Student / <del>Developer</del></p>
+        <p class='text-muted-foreground'>Student / Developer</p>
         <p>你好，我叫袁霁 👋🏻 <Spoiler>原神牛逼</Spoiler></p>
         <p>目前在华中科技大学计算机科学与技术学院读大二 📖</p>
         <p>正在探索Agent开发相关技术栈 Python/Go🧑🏻‍💻</p>
@@ -102,9 +104,11 @@ if (!images[imagePath])
       </Section>
       <Section title='Skills'>
         <SkillLayout title='Languages' skills={languages} />
-        <SkillLayout title='Backend' skills={backend} />
+        <SkillLayout title='Frameworks' skills={frameworks} />
+        <SkillLayout title='AI / Agents' skills={ai} />
+        <SkillLayout title='Databases' skills={databases} />
+        <SkillLayout title='Message Queues' skills={messageQueues} />
         <SkillLayout title='Tools' skills={developmentTools} />
-        <SkillLayout title='AI' skills={agentdev} />
       </Section>
       
       {
